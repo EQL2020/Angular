@@ -18,8 +18,28 @@ export class HeroesComponent implements OnInit {
 
   // initialisation du composant :
   ngOnInit(): void {
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes()
+                    .subscribe( maListeDeHeros => this.heroes = maListeDeHeros );
   }
+
+  /*
+  // VERSION LONGUE :
+  // initialisation du composant :
+  ngOnInit(): void {
+    // je récupère un observable :
+    let obs = this.heroService.getHeroes();
+    // je donne à mon observable ma méthode de callback (update) :
+    obs.subscribe( this.update );
+
+    console.log("plop");
+  }
+
+  // fonction de callback :
+  update(result : Hero[]){
+    this.heroes = result;
+  }
+
+  */
 
   selectHero(hero : Hero) : void {
     console.log(hero);
