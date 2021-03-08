@@ -16,6 +16,9 @@ export class HeroesComponent implements OnInit {
   constructor() { }
 
   selectHero(hero : Hero) : void {
+
+    console.log(hero);
+
     if (this.selectedHero == hero){
       this.selectedHero = null;
     }

@@ -7,9 +7,4 @@
     </li>
 </ul>
 
-<section class="details" *ngIf="selectedHero != null">
-    
-    <h3>{{selectedHero.prenom}} {{selectedHero.nom | uppercase}}</h3>
-    <span>Pouvoir : </span>{{selectedHero.pouvoir}}
-
-</section>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
