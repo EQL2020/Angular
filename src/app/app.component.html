@@ -1,13 +1,18 @@
 <h1>{{title}}</h1> <!-- récupération d'un attribut du composant -->
 
+<nav>
+<a routerLink="/">Accueil</a>
+|    
+<a routerLink="/heroes">Mes héros</a>
+|
+<a routerLink="/films">Films</a>
+</nav>
+
 <p>{{description}}</p>
 
+<div>
+<router-outlet></router-outlet>
+</div>
 
-
-<router-outlet>
-    <!-- affichage du composant heroes : -->
-    <!--<app-heroes></app-heroes>-->
-    <app-movies></app-movies>
-</router-outlet>
-
-<footer></footer>
+ 
+<footer>pied de page</footer>
